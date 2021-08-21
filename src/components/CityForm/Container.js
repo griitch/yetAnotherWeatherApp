@@ -9,6 +9,9 @@ const Container = styled.form`
     & * {
       margin-top: 1rem;
     }
+    & {
+      flex-direction: column;
+    }
   }
 
   display: flex;
