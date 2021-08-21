@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import Container from "./Container";
 import CityForm from "../CityForm";
@@ -28,12 +27,15 @@ function MainContent() {
         }
       />
       <CardsContainer
-      removeCity = { city2remove => setWeatherData(
-        prev => prev.filter( cityData => cityData.city != city2remove  ) )}
-      WeatherData={WeatherData} />
+        removeCity={(city2remove) =>
+          setWeatherData((prev) =>
+            prev.filter((cityData) => cityData.city != city2remove)
+          )
+        }
+        WeatherData={WeatherData}
+      />
     </Container>
   );
 }
 
 export default MainContent;
-
