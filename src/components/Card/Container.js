@@ -5,8 +5,9 @@ const Container = styled.div`
   border: 1px solid black;
   padding-bottom: 1rem;
   border-radius: 5px;
-  background-color: pink;
+  background-color: #90e0ef;
   margin-bottom: 1rem;
+  text-align: center;
 
   @media (max-width: 750px) {
     width: 80%;

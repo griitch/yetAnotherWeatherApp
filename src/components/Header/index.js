@@ -5,7 +5,7 @@ function Header() {
   const today = new Date();
   return (
     <div>
-      <Navbar navbar bgColor="darkviolet">
+      <Navbar navbar bgColor="darkblue">
         <h2>{today.toDateString()}</h2>
         <h1>Griitch Weather</h1>
         <h3>

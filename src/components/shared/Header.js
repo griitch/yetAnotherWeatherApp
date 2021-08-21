@@ -23,7 +23,7 @@ const Container = styled.div`
   }
 
   & a:hover {
-    color: black;
+    color: aqua;
   }
 
   color: white;

@@ -47,7 +47,7 @@ function CityForm(props) {
       <Button px="2" py="0.5" bgColor="green" hover="darkgreen" text="white">
         Add City
       </Button>
-      { loading &&  <Loading src="src\assets\loading.gif" alt="loading" /> } 
+      { loading &&  <Loading src="src\assets\loading.png" alt="loading" /> } 
       {error && <Error>City not found !! </Error>}
     </Container>
     </>

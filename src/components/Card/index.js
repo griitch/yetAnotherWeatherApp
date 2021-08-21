@@ -11,7 +11,7 @@ function Card(props) {
 
   return (
     <Container>
-      <Header bgColor="gray">
+      <Header bgColor="#0077b6">
         <h2>
           {city}, {country}
         </h2>
