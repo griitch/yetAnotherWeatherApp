@@ -15,6 +15,7 @@ function CityForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+    setError(false);
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?APPID=71d90f3a0d75b4ffcd687686c145742c&q=${cityName}&units=metric`
     )
