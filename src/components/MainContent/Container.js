@@ -7,6 +7,11 @@ const Container = styled.div`
 
   width: 90%;
   margin: auto;
+
+  & h1 {
+    text-align: center;
+    color: white;
+  }
 `;
 
 export default Container;

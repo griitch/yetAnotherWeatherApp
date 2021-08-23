@@ -35,22 +35,22 @@ function CityForm(props) {
         });
       })
       .catch(() => setError(true))
-      .finally( () => setLoading(false) );
+      .finally(() => setLoading(false));
   };
 
   return (
     <>
-    <Container onSubmit={handleSubmit}>
-      <TextInput
-        value={cityName}
-        onChange={(e) => setCityName(e.target.value)}
-      />
-      <Button px="2" py="0.5" bgColor="green" hover="darkgreen" text="white">
-        Add City
-      </Button>
-      { loading &&  <Loading src="src\assets\loading.png" alt="loading" /> } 
-      {error && <Error>City not found !! </Error>}
-    </Container>
+      <Container onSubmit={handleSubmit}>
+        <TextInput
+          value={cityName}
+          onChange={(e) => setCityName(e.target.value)}
+        />
+        <Button px="2" py="0.5" bgColor="green" hover="darkgreen" text="white">
+          Add City
+        </Button>
+        {loading && <Loading src="src\assets\loading.png" alt="loading" />}
+        {error && <Error>City not found !! </Error>}
+      </Container>
     </>
   );
 }
