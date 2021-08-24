@@ -5,18 +5,19 @@ const useLocalStorageWeatherData = ( WeatherData, setWeatherData  ) => {
 
   useEffect(() => {
     if (localStorage.getItem("WeatherData")) {
-      setLoading(true);
-      let oldData = JSON.parse(localStorage.getItem("WeatherData"));
-      oldData.forEach((elem) => {
+        let oldData = JSON.parse(localStorage.getItem("WeatherData"));
+        if(oldData.length > 0)
+            setLoading(true);
+      oldData.forEach((city) => {
         fetch(
-          `https://api.openweathermap.org/data/2.5/weather?APPID=71d90f3a0d75b4ffcd687686c145742c&q=${elem.city}&units=metric`
+          `https://api.openweathermap.org/data/2.5/weather?APPID=71d90f3a0d75b4ffcd687686c145742c&q=${ city }&units=metric`
         )
           .then((resp) => resp.json())
           .then((data) => {
             setWeatherData((prev) => [
               ...prev,
               {
-                city: elem.city,
+                city: city,
                 description: data.weather[0].description,
                 icon: data.weather[0].icon,
                 temp: data.main.temp,
@@ -32,7 +33,7 @@ const useLocalStorageWeatherData = ( WeatherData, setWeatherData  ) => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("WeatherData", JSON.stringify(WeatherData));
+    localStorage.setItem("WeatherData", JSON.stringify(WeatherData.map( data => data.city  )));
   }, [WeatherData]);
 
   return loading;
