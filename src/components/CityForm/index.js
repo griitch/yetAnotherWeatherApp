@@ -11,13 +11,14 @@ function CityForm(props) {
   const [cityName, setCityName] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const API_KEY = 555; // SET YOUR API KEY HERE
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     setError(false);
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?APPID=71d90f3a0d75b4ffcd687686c145742c&q=${cityName}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?APPID=${API_KEY}&q=${cityName}&units=metric`
     )
       .then((response) => {
         if (!response.ok) throw new Error();
