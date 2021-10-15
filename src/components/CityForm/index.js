@@ -6,12 +6,13 @@ import Error from "./error";
 import Loading from "./loading";
 import Container from "./Container";
 import { useState } from "react";
+import loadingPic from "../../assets/loading.png";
 
 function CityForm(props) {
   const [cityName, setCityName] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const API_KEY = 555; // SET YOUR API KEY HERE
+  const API_KEY = "YOUR API KEY"; // SET YOUR API KEY HERE
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,7 +50,7 @@ function CityForm(props) {
         <Button px="2" py="0.5" bgColor="green" hover="darkgreen" text="white">
           Add City
         </Button>
-        {loading && <Loading src="src\assets\loading.png" alt="loading" />}
+        {loading && <Loading src={loadingPic} alt="loading" />}
         {error && <Error>City not found !! </Error>}
       </Container>
     </>
